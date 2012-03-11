@@ -1,0 +1,39 @@
+﻿@model _1CW_Site.Models.ONGModel
+
+@{
+    ViewBag.Title = "Delete ONG";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>ONGModels</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">@Model.Name</div>
+
+    <div class="display-label">Email</div>
+    <div class="display-field">@Model.Email</div>
+
+    <div class="display-label">Type</div>
+    <div class="display-field">@Model.Type</div>
+
+    <div class="display-label">Address</div>
+    <div class="display-field">@Model.Address</div>
+
+    <div class="display-label">Password</div>
+    <div class="display-field">@Model.Password</div>
+
+    <div class="display-label">ConfirmPassword</div>
+    <div class="display-field">@Model.ConfirmPassword</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

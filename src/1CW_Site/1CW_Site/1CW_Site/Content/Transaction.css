@@ -1,0 +1,48 @@
+﻿div#box_transaction_company
+{
+    width: 230px;
+    float: left;
+    display: inline;
+}
+
+div#box_transaction_organization
+{
+    width: 230px;
+    float: right;
+    display: inline;
+}
+
+p#amount
+{
+    font-size:large;
+    font-weight:bold;
+}
+
+p#donation
+{
+    font-size:large;
+    font-weight:bold;
+}
+
+div#box_transaction_amount
+{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+div#box_transaction_amount>div.box_content
+{
+    text-align: justify;
+}
+
+p#amount, div#box_transaction_amount p.centered_image, div#box_transaction_amount hr
+{
+    margin-top: 10px;
+}
+
+p#accept_text
+{
+    font-size: 13px;
+}

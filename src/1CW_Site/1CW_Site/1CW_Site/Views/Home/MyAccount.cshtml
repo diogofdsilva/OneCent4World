@@ -1,0 +1,41 @@
+﻿@using _1CW_Site.ViewHelpers
+
+@{
+    ViewBag.Title = "Welcome " + @ViewBag.ProfileName;
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<link href="@Url.Content("~/Content/MyAccount.css")" rel="stylesheet" type="text/css" />
+
+<div class="box" id="box_profile">
+    <div class="box_title">Profile</div>
+    <div class="box_content">
+        <table id="balance">
+            <tr>
+                <td>@ViewBag.ProfileName</td>
+                <td>
+                    @Html.ActionLink("(edit profile)", "Details", (string)ViewBag.ProfileType)
+                </td>
+            </tr>
+            <tr>
+                <td id="b_currency">Currency</td>
+                <td id="b_balance">Balance</td>
+            </tr>
+            <tr>
+                <td> <img id="euro_flag" src="@Url.Content("~/Content/Images/euro_flag.png")" alt=""/> EUR</td>
+                <td>@string.Format("{0:#,##0.00}", ViewBag.Balance) €</td>
+            </tr>
+        </table>
+        <hr />
+        <div>
+            Total donations: @string.Format("{0:#,##0}", ViewBag.TotalDonationsValue) cent
+        </div>
+    </div>
+</div>
+
+<div class="box" id="box_last_movements">
+    <div class="box_title">Last Movements</div>
+    <div class="box_content">
+        @Html.Partial("../Transaction/List", (object)ViewBag.Transactions)
+    </div>
+</div>

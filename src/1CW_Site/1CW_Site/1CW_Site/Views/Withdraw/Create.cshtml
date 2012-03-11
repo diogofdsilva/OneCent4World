@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Withdraw";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<link href="@Url.Content("~/Content/Withdraw.css")" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+    function create_form() {
+        $("#input_box").show();
+    }
+</script>
+
+<div class="box" id="box_withdraws">
+    <div class="box_title">Withdraw</div>
+    <div class="box_content">
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Duration</th>
+            </tr>
+            <tr>
+                <td>@Html.ActionLink("Bank Transfer", "BankTransfer", "Withdraw") </td>
+                <td>2-5 days</td>
+            </tr>
+            <tr>
+                <td>@Html.ActionLink("Check", "Check", "Withdraw") </td>
+                <td>1-2 days</td>
+            </tr>
+            <!--
+            <tr>
+                <td onclick="create_form();">Withdraw</td>
+                <td>Instant</td>
+            </tr>
+             @using (Html.BeginForm())
+             {
+                @Html.ValidationSummary(true)
+                <tr id="input_box" class="invisible">      
+                    <td><div class="clickable"> @Html.TextBox("Value") </div></td>
+                    <td><input type="submit" value="Withdraw" /></td>
+                </tr>
+              }
+              -->
+        </table>
+    </div>
+</div>

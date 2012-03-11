@@ -1,0 +1,331 @@
+﻿*
+{
+    margin: 0px;
+}
+
+html
+{
+    height: 100%;
+}
+
+body
+{
+    height: 100%;
+    background-image: url("../Content/Images/border.png");
+    background-repeat: repeat-y;
+    background-position: center center;
+    background-color: #F0F0F0;
+}
+
+.content
+{
+    min-height:100%;
+    width:960px;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -116px;
+    background-color: #EAFFE6;
+}
+
+#account_movement_table
+{
+    text-align:center;
+}
+
+.invisible
+{
+    display:none;
+}
+
+.visible
+{
+    display: block;
+}
+
+/****************** MENU *****************/
+
+.menu
+{
+    padding-top: 11px;
+    /*margin-top: 6px;*/
+    height: 43px;
+    display: inline-block;
+}
+
+.menu_left
+{
+    display: inline-block;
+}
+
+
+.menu_middle
+{
+    text-align: center;
+    line-height: 43px;
+    vertical-align: middle;
+    font-family: "Times New Roman";
+    font-size: 20px;
+    padding-left: 25px;
+    padding-right: 24px;
+}
+
+.menu_middle>a
+{
+	text-decoration: none;
+}
+
+.menu_middle>a:link, .menu_middle>a:visited
+{
+    color: White;
+    text-shadow: 1px 1px 1px Black;
+}
+
+.menu_middle>a:hover
+{
+    color: Yellow;
+}
+
+/****************** HEADER *****************/
+.header
+{
+    height: 209px;
+    width: 100%;
+    position:relative;
+    margin: 0px;
+    background-image: url("../Content/Images/header_background.png");
+    background-repeat: repeat-x;
+}
+
+.header_top
+{
+    height: 80px;
+    width: 960px;
+}
+
+.header_info
+{
+	display: inline;
+	float: right;
+	/*margin-top: 2px;*/
+	padding-top: 2px;
+	color: White;
+	text-align: center;
+}
+
+.header_info img
+{
+    width: 128px;
+}
+
+.header_info>a:link, .header_info>a:visited
+{
+	font-size: 11px;
+	color: silver;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.header_info>a:hover
+{
+	text-decoration: overline underline;
+	color: yellow;
+}
+
+.header_logo_text
+{
+    display: inline-block;
+    width: 750px;
+}
+
+.header_logo_text>img
+{
+    padding-top: 26px;
+    /*margin-top: 26px;
+    margin-left: 60px;*/
+    padding-left: 60px;
+}
+
+.header_left>img
+{
+    display:inline;
+    float:left;
+}
+
+/************ FOOTER ***********/
+
+.footer
+{
+	height: 116px;
+	width: 960px;
+	margin-left:auto;
+	margin-right:auto;
+	background-image: url("../Content/Images/footer_background.png");
+	background-repeat: repeat-x;
+	position: relative;
+	margin-top: -116px;
+	clear: both;
+}
+
+.footer_content
+{
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.footer_logo_text
+{
+	margin-top: 28px;
+	display: inline-block;
+	width: 300px;
+}
+
+.footer_ic
+{
+    display: inline-block;
+    float: left;
+    padding-top: 30px;
+    width: 350px;
+    padding-left:100px;
+}
+
+.footer_copyright
+{
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.footer_copyright>img
+{
+	margin-bottom: -32px;
+}
+
+/************ CONTENT DIV ***********/
+
+.box
+{
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 1px;
+}
+
+.box_title
+{
+    height: 28px;
+    min-height: 28px;
+    line-height: 28px;
+    vertical-align: middle;
+    text-align: center;
+    background: url("../Content/Images/title_bar.png") repeat-x;
+    color: White;
+    font-weight: bold;
+}
+
+.box_content
+{
+	border: 1px solid #223d1e;
+	padding: 5px;
+	background-color: #ededed;
+}
+
+.box_content>table
+{
+    width: 100%;
+}
+
+/************ MAIN ***********/
+
+.main
+{
+    padding-bottom:116px;
+    width: 940px;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.centered_image
+{
+    text-align:center;
+    display:block;
+}
+
+a:link, a:visited
+{
+	color: teal;
+}
+
+a:hover
+{
+    color: Highlight;
+
+}
+
+span.log
+{
+	color: Silver;
+}
+
+.oddClass
+{
+	background-color: #ffe1a8;
+}
+
+.evenClass
+{
+	background-color: #ffd700;
+}
+
+table th
+{
+	background-color: black;
+	border: 0;
+	color: white;
+}
+
+.fieldset
+{
+    max-width: 600px;
+    display: block;
+    margin: auto;
+}
+
+fieldset
+{
+    max-width: 598px;
+}
+
+/************ EMERGENCY ***********/
+
+div.box_emergency
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 500px;
+}
+
+div.box_emergency>div.box_title>img
+{
+    margin-bottom: -3px;
+}
+
+.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
+
+a>img 
+{
+    border: 0;
+}
+
+.field-validation-error
+{
+    color: Red;
+}

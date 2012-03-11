@@ -1,0 +1,11 @@
+﻿#t_value, #t_from, #t_date
+{
+    width:100px;
+    text-align:left;
+}
+
+#t_from, #t_date
+{
+    width:150px;
+    text-align:left;
+}

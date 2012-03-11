@@ -1,0 +1,76 @@
+﻿@model IEnumerable<_1CW_Site.Models.WithdrawModel>
+@using _1CW_Site.ViewHelpers
+
+@{
+    ViewBag.Title = "Withdraws";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<link href="@Url.Content("~/Content/DepositList.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/Withdraw.css")" rel="stylesheet" type="text/css" />
+
+<div class="box" id="box_withdraw">
+    <div>@Html.ActionLink("New Withdraw", "Create")</div>
+    <div class="box_title">Withdraws History</div>
+    <div class="box_content">
+        <table>
+            <tr>
+                <th id="t_value">
+                    Value
+                </th>
+                <th id="t_from">
+                    To
+                </th>
+                <th id="t_date">
+                    Date
+                </th>
+            </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr class="@ListExtensions.GetRowClass(Model, item, "evenClass", "oddClass")">
+                <td>
+                    €@string.Format("{0:#,##0.00}", item.Value)
+                </td>
+                <td>
+                    @String.Format("{0}", item.Destination)
+                </td>
+                <td>
+                    @String.Format("{0:g}", item.Date)
+                </td>
+            </tr>
+        }
+        </table>
+        <div>
+            Navigation:
+            @if (ViewBag.Page > 1)
+            {
+                @Html.ActionLink("<< Previous", "List", new { page = ViewBag.Page - 1 })@: |
+            }
+        
+            @for (int i = ViewBag.StartPage; i < ViewBag.EndPage; ++i)
+            {
+                if(i==ViewBag.Page){
+                    @ViewBag.Page;@:,
+                } else {
+                    @Html.ActionLink(i.ToString(), "List", new { page = i })@:,
+                }
+            }
+            @if (ViewBag.Pages > 0)
+            {
+                if (ViewBag.EndPage == ViewBag.Page)
+                {
+                    @ViewBag.EndPage
+                } else {
+                    @Html.ActionLink(((int)ViewBag.EndPage).ToString(), "List", new { page = (int)ViewBag.EndPage })
+                }
+            }
+
+            @if (ViewBag.Page < ViewBag.Pages)
+            {
+                @:| @Html.ActionLink("Next >>", "List", new { page = ViewBag.Page + 1 })
+            }
+        </div>
+    </div>
+    <div>@Html.ActionLink("New Withdraw", "Create")</div>
+</div>

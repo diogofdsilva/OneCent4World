@@ -1,0 +1,55 @@
+﻿@model IEnumerable<OCW.DAL.DTOs.Movement>
+@using _1CW_Site.ViewHelpers
+
+<table id="account_movement_table">
+    <tr>
+        <th>
+            Type
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Organization
+        </th>
+        <th>
+            Source
+        </th>
+        <th>
+            Destination
+        </th>
+        <th>
+            Value
+        </th>
+        <th>
+            Donation
+        </th>
+    </tr>
+@foreach (var item in Model) {
+    <tr class="@ListExtensions.GetRowClass(Model, item, "evenClass", "oddClass")">
+        <td>
+            @item.TypeMovement
+        </td>
+        <td>
+            @String.Format("{0:g}", item.DateMovement)
+        </td>
+        <td>
+            @item.OrganizationMovement
+        </td>
+        <td>
+            @item.SourceMovement
+        </td>
+        <td>
+            @item.DestinyMovement
+        </td>
+        <td>
+            @string.Format("{0:#,##0.00}", item.ValueMovement) €
+        </td>
+        <td>
+            @string.Format("{0:#,##0.00}", (decimal)item.DonationMovement) €
+        </td>
+    </tr>
+}
+
+</table>
+

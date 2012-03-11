@@ -1,0 +1,14 @@
+﻿.menu_register_person.menu_left
+{
+    background: url("../Content/Images/menu_left.png") no-repeat #eaffe6;
+}
+
+.menu_register_person.menu_right
+{
+    background: url("../Content/Images/menu_right.png") 100% 0 no-repeat;
+}
+
+.menu_register_person.menu_middle>a:link, .menu_register_person.menu_middle>a:visited
+{
+    color: Black;
+}

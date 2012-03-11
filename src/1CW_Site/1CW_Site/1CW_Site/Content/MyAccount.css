@@ -1,0 +1,108 @@
+﻿
+.top_container
+{
+    width: 980px;
+    min-height:50px;
+}
+
+.name_info
+{
+    float: left;
+}
+
+.down_container
+{
+    width:980px;
+    min-height:200px;
+}
+
+.balance_container
+{
+    float:left;
+    min-width:200px;  
+}
+
+#euro_flag
+{
+    width:15px;
+    height:15px;
+}
+
+.history_container
+{
+    float:right;
+    display:inline-block;
+}
+
+#h_title
+{
+  
+}
+
+#b_balance
+{
+    width:100px;
+}
+
+#b_currency
+{
+    width:100px;
+}
+
+#h_date
+{
+    width:100px;
+}
+
+#h_type
+{
+    width:100px;
+}
+
+#h_name
+{
+    width:200px;
+}
+
+#h_value
+{
+    width:100px;    
+}
+
+table, th
+{
+    border-style:solid;
+    border-color:Black;
+    border-width:1px;
+}
+
+.menu_account.menu_left
+{
+    background: url("../Content/Images/menu_left.png") no-repeat #eaffe6;
+}
+
+.menu_account.menu_right
+{
+    background: url("../Content/Images/menu_right.png") 100% 0 no-repeat;
+}
+
+.menu_account.menu_middle>a:link, .menu_account.menu_middle>a:visited
+{
+    color: Black;
+}
+
+#box_profile
+{
+    width: 225px;
+    float: left;
+}
+
+table#balance
+{
+    border: 0;
+}
+
+div#box_last_movements
+{
+    width: 713px
+}

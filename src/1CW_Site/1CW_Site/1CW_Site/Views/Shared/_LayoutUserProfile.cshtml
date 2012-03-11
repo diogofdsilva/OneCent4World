@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/LayoutUserProfile.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="header_top">
+            <div class="header_top_logo">
+                <img src="../../Content/Images/logo.png" alt="no image" />
+            </div>
+
+            <div class="ocw_title"><img src="../../Content/Images/ocwWord.png" alt="no image" /></div>
+
+            <div class="header_top_info"> Welcome, Diogo Machado! | Logout </div>
+
+        </div> 
+        <div class="header_menu">
+            <div class="button_container">
+                <div class="header_menu_button">@Html.ActionLink("My Account","MyAccountButton","Profile")</div>
+                <div class="header_menu_button">@Html.ActionLink("Deposit","DepositButton","Profile")</div>
+                <div class="header_menu_button">@Html.ActionLink("Withdraw","WithdrawButton","Profile")</div>
+                <div class="header_menu_button">@Html.ActionLink("Send Money","SendMoneyButton","Profile")</div>
+                <div class="header_menu_button">@Html.ActionLink("Options","OptionsButton","Profile")</div>
+                <div class="header_menu_button">@Html.ActionLink("Statistics","StatisticsButton","Profile")</div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main_content">
+            @RenderBody()
+        </div>
+
+    </div>
+
+    <div class="footer"></div>
+
+</body>
+</html>

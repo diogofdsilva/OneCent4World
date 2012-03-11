@@ -1,0 +1,52 @@
+﻿@model _1CW_Site.Models.DepositModel
+           
+@{
+    ViewBag.Title = "Deposit";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<link href="@Url.Content("~/Content/Deposit.css")" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+    
+    function create_form() {
+        $("#input_box").show();
+    }
+
+</script>
+
+<div class="box" id="box_deposit_create">
+    <div class="box_title">Deposit</div>
+    <div class="box_content">
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Duration</th>
+            </tr>
+            <tr>
+                <td>@Html.ActionLink("Credit Card", "CreditCard", "Deposit")</td>
+                <td>Instant</td>
+            </tr>
+            <tr>
+                <td>@Html.ActionLink("Bank Transfer", "BankTransfer", "Deposit") </td>
+                <td>2-5 days</td>
+            </tr>
+            <!--<tr>
+                <td onclick="create_form();">Deposit</td>
+                <td>Instant</td>
+            </tr>
+            @using (Html.BeginForm("TestDeposit", "Deposit"))
+            {
+                @Html.ValidationSummary(true)
+                <tr id="input_box" class="invisible">      
+                    <td><div class="clickable"> @Html.TextBoxFor(m => m.Value) </div></td>
+                    <td><input type="submit" value="OK" /></td>
+                    <td>@Html.ValidationMessageFor(m => m.Value)</td>
+                </tr>
+            }-->
+        </table>
+    </div>
+    <div>
+        @Html.ActionLink("Back to List", "List", new { page = 1 })
+    </div>
+</div>

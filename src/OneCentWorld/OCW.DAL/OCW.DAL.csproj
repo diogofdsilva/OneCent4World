@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42EBA902-091C-4EEE-8C77-19AA7F07348F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OCW.DAL</RootNamespace>
+    <AssemblyName>OCW.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAOs\IAddressDAO.cs" />
+    <Compile Include="DAOs\IDepositDAO.cs" />
+    <Compile Include="DAOs\IEmergencyDAO.cs" />
+    <Compile Include="DAOs\IProfileDAO.cs" />
+    <Compile Include="DAOs\IRoleDAO.cs" />
+    <Compile Include="DAOs\ITelephoneDAO.cs" />
+    <Compile Include="DAOs\IWithdrawDAO.cs" />
+    <Compile Include="DTOs\Account.cs" />
+    <Compile Include="DTOs\Address.cs" />
+    <Compile Include="DTOs\Company.cs" />
+    <Compile Include="DTOs\Country.cs" />
+    <Compile Include="DTOs\Deposit.cs" />
+    <Compile Include="DTOs\Emergency.cs" />
+    <Compile Include="DTOs\Factory\IAccountFactory.cs" />
+    <Compile Include="DTOs\Factory\IAddressFactory.cs" />
+    <Compile Include="DTOs\Factory\ICompanyFactory.cs" />
+    <Compile Include="DTOs\Factory\ICountryFactory.cs" />
+    <Compile Include="DTOs\Factory\IDepositFactory.cs" />
+    <Compile Include="DTOs\Factory\IEmergencyFactory.cs" />
+    <Compile Include="DTOs\Factory\IOrganizationFactory.cs" />
+    <Compile Include="DTOs\Factory\ITagFactory.cs" />
+    <Compile Include="DTOs\Factory\IPersonFactory.cs" />
+    <Compile Include="DTOs\Factory\IRoleFactory.cs" />
+    <Compile Include="DTOs\Factory\ITelephoneFactory.cs" />
+    <Compile Include="DTOs\Factory\ITransactionFactory.cs" />
+    <Compile Include="DTOs\Factory\IWithdrawFactory.cs" />
+    <Compile Include="DTOs\FixupCollection.cs" />
+    <Compile Include="DTOs\Movement.cs" />
+    <Compile Include="DTOs\Organization.cs" />
+    <Compile Include="DTOs\Person.cs" />
+    <Compile Include="DTOs\Profile.cs" />
+    <Compile Include="DTOs\Role.cs" />
+    <Compile Include="DTOs\Tag.cs" />
+    <Compile Include="DTOs\Telephone.cs" />
+    <Compile Include="DTOs\Transaction.cs" />
+    <Compile Include="DTOs\Withdraw.cs" />
+    <Compile Include="Exceptions\ConcurrencyException.cs" />
+    <Compile Include="Exceptions\ConfigurationException.cs" />
+    <Compile Include="Exceptions\ConnectionException.cs" />
+    <Compile Include="Exceptions\DataSourceException.cs" />
+    <Compile Include="Exceptions\FieldNotFoundException.cs" />
+    <Compile Include="Exceptions\RecordNotFoundException.cs" />
+    <Compile Include="IndependentLayerEntities.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DAOs\IAccountDAO.cs" />
+    <Compile Include="DAOs\ICompanyDAO.cs" />
+    <Compile Include="DAOs\ICountryDAO.cs" />
+    <Compile Include="DAOs\IDAO.cs" />
+    <Compile Include="DAOs\IOrganizationDAO.cs" />
+    <Compile Include="DAOs\ITagDAO.cs" />
+    <Compile Include="DAOs\ITransactionDAO.cs" />
+    <Compile Include="DAOs\IPersonDAO.cs" />
+    <Compile Include="DataAccessLayer.cs" />
+    <Compile Include="Visitor\IVisitor.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,30 @@
+﻿.menu_withdraw.menu_left
+{
+    background: url("../Content/Images/menu_left.png") no-repeat #eaffe6;
+}
+
+.menu_withdraw.menu_right
+{
+    background: url("../Content/Images/menu_right.png") 100% 0 no-repeat;
+}
+
+.menu_withdraw.menu_middle>a:link, .menu_withdraw.menu_middle>a:visited
+{
+    color: Black;
+}
+
+#box_withdraw
+{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+div#box_withdraws
+{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

@@ -1,0 +1,70 @@
+﻿@model _1CW_Site.Models.LogonRegisterContainerModel
+@using _1CW_Site.ViewHelpers
+
+@{
+    ViewBag.Title = "Welcome to One Cent World";
+    Layout = "~/Views/Shared/_LayoutStart.cshtml";
+}
+
+<link href="@Url.Content("~/Content/LayoutUserProfile.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/Start.css")" rel="stylesheet" type="text/css" />
+
+<div id="description_text">
+    Welcome to One Cent World, the place where every cent counts!
+    OCW is an e-commerce platform that aims to push the world's charity
+    one step further. Our design is to make an one cent contribute in
+    every electronic transaction.<br /><br />
+    <b>Start now to change the world... cent by cent.</b>
+</div>
+
+<div id="ocw_banner">
+    <img alt="One Cent World" src="@Url.Content("~/Content/Images/banner.png")" />
+</div>
+
+<div id="imageScroller">  
+    <div id="logoViewer">
+        @{
+            IEnumerable<string> logos = ViewHelper.GetONGsLogos(30, Directory.GetFiles(Server.MapPath("Content/SolidarityLogos")));
+                                
+            foreach (string s in logos)
+            {
+                <a class="wrapper">
+                    <img src="@ViewHelper.GetFilePath(Path.GetFileName(s))" height="100" width="100" alt="can not open" /> 
+                </a>
+            } 
+        }
+    </div>        
+</div>
+
+<script type="text/javascript" >
+    function retiraPrimeiro() {
+        $first = $scroller.children().first();
+        var w = parseInt($first.width());
+        var l = parseInt($scroller.css('left'));
+        if (!l) { l = 0; }
+        var t = parseInt(w + l) * velocidade;
+
+        $scroller.animate({
+            'left': -w + 'px'
+        }, t, 'linear',
+            function () {
+                $first.detach().appendTo($scroller);
+                $first = $scroller.css("left", "5px").children().first();
+                setTimeout(retiraPrimeiro, 1);
+            });
+    }
+
+    var $scroller = null;
+    var $first = null;
+    var velocidade = 30;
+    $(document).ready(
+    function () {
+        $scroller = $("#logoViewer");
+        if ($scroller.length) {
+            retiraPrimeiro();
+            $scroller.hover(function () {
+                $scroller.stop(true, false);
+            }, retiraPrimeiro);
+        }
+    });
+</script>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    @*<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />*@
+    <link href="@Url.Content("~/Content/Start.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="page">
+        <div id="headerContainer">
+            <div id="headerContent">
+                <div id="headerLogo" class="lfloat">
+                    <img src="../../Content/Images/logo.png" id="headerLogo1" />
+                    <span class="" style="text-align=center;vertical-align=middle;font-size:x-large;">
+                        One Cent for the World
+                    </span>
+                </div>
+                
+            </div>
+        </div>
+
+        <div id="mainContainer">
+            <div id="mainCenterContent">
+                @RenderBody()
+            </div>
+            
+            <div id="footer">
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

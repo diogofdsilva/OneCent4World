@@ -1,0 +1,30 @@
+.menu_deposit.menu_left
+{
+    background: url("../Content/Images/menu_left.png") no-repeat #eaffe6;
+}
+
+.menu_deposit.menu_right
+{
+    background: url("../Content/Images/menu_right.png") 100% 0 no-repeat;
+}
+
+.menu_deposit.menu_middle>a:link, .menu_deposit.menu_middle>a:visited
+{
+    color: Black;
+}
+
+div#box_deposits
+{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+div#box_deposit_create
+{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

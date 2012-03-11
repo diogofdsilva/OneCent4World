@@ -1,0 +1,85 @@
+﻿@model _1CW_Site.Models.CreditCardModel
+
+@{
+    ViewBag.Title = "Credit Card Deposit";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<link href="@Url.Content("~/Content/Deposit.css")" rel="stylesheet" type="text/css" />
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <div class="fieldset">
+        <h2>Deposit</h2>
+        <fieldset>
+            <legend>Credit Card</legend>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Issuer)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(model => model.Issuer, new SelectList(ViewBag.CardTypes))
+                @Html.ValidationMessageFor(model => model.Issuer)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Number)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Number)
+                @Html.ValidationMessageFor(model => model.Number)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ValidityMonth)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ValidityMonth)
+                @Html.ValidationMessageFor(model => model.ValidityMonth)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ValidityYear)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ValidityYear)
+                @Html.ValidationMessageFor(model => model.ValidityYear)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Cvv)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Cvv)
+                @Html.ValidationMessageFor(model => model.Cvv)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Value)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Value)
+                @Html.ValidationMessageFor(model => model.Value)
+            </div>
+
+            <p>
+                <input type="submit" value="Deposit" />
+            </p>
+        </fieldset>
+        <div>
+            @Html.ActionLink("Back to New Deposit", "Create")
+        </div>
+    </div>
+}
+

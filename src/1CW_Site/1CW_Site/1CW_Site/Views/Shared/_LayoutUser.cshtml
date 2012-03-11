@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+@{
+    var cookie =  this.Request.Cookies["ProfileType"];
+    if(cookie != null)
+    {
+        ViewBag.ProfileType = cookie.Value;
+    }else
+    {
+        ViewBag.ProfileType = string.Empty;
+    }
+    
+}
+
+<html>
+<head>
+    <title>OCW - @ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/LayoutUserProfile.css")" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/IE.css")" />
+    <![endif]-->
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <div class="header_left">
+                <img src="../../Content/Images/logo.png" alt="One Cent World" />
+            </div>
+            <div class="header_middle">
+                <div class="header_logo_text">
+                    <img src="../../Content/Images/one_cent_world_text.png" alt="One Cent World ...where every cent counts!" />
+                    <div class="header_info">
+                        @if(Request.IsAuthenticated) {
+                            <text>Welcome <b>@Context.User.Identity.Name</b>!
+                            <span class="log">[</span> @Html.ActionLink("Log Off", "LogOff", "Account") <span class="log">]</span></text>
+                        } else {
+                            @:<span class="log">[</span> @Html.ActionLink("Log On", "LogOn", "Account") <span class="log">]</span>
+                        }
+                        <p  class="centered_image">
+                            <a href="http://www.endpoverty2015.org" target="_blank"><img src="../../Content/Images/end_poverty.png" alt="End Poverty 2015" /></a>
+                        </p>
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="menu_left menu_account">
+                        <div class="menu_right menu_account">
+                            <div class="menu_middle menu_account">@Html.ActionLink("My Account","MyAccount","Home")</div>
+                        </div>
+                    </div>
+                    <div class="menu_left menu_deposit">
+                        <div class="menu_right menu_deposit">
+                            <div class="menu_middle menu_deposit">@Html.ActionLink("Deposit", "List", "Deposit", new { page = 1 }, null)</div>
+                        </div>
+                    </div>
+                    <div class="menu_left menu_withdraw">
+                        <div class="menu_right menu_withdraw">
+                            <div class="menu_middle menu_withdraw">@Html.ActionLink("Withdraw", "List", "Withdraw", new { page = 1 }, null)</div>
+                        </div>
+                    </div>
+                    <div class="menu_left menu_history">
+                        <div class="menu_right menu_history">
+                            <div class="menu_middle menu_history">@Html.ActionLink("History", "History", "Home", new { page = 1 }, null)</div>
+                        </div>
+                    </div>
+                    <div class="menu_left menu_options">
+                        <div class="menu_right menu_options">
+                            <div class="menu_middle menu_options">@Html.ActionLink("Profile", "Details", (string)ViewBag.ProfileType)</div>
+                        </div>
+                    </div>
+                    <div class="menu_left menu_about">
+                        <div class="menu_right menu_about">
+                            <div class="menu_middle menu_about">@Html.ActionLink("About Us", "About", "Home")</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            @{Html.RenderAction("Active", "Emergency");}
+            <div class="main_content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_content">
+            <div class="footer_logo_text">
+                <img src="../../Content/Images/one_cent_world_text_footer.png" alt="One Cent World ...changing the world in every cent!" />
+            </div>
+            <div class="footer_ic">
+                <a href="http://www.imaginecup.com" target="_blank"><img src="../../Content/Images/imagine_cup_2011.png" alt="Imagine Cup 2011"/></a>
+            </div>
+            <div class="footer_copyright">
+                <img src="../../Content/Images/copyright.png" alt="Copyright &copy; 2011 One Cent World" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

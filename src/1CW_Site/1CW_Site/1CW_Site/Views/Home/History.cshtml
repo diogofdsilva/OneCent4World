@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "History";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<link href="@Url.Content("~/Content/History.css")" rel="stylesheet" type="text/css" />
+
+<div class="box" id="box_history">
+    <div class="box_title">History</div>
+    <div class="box_content">
+        @Html.Partial("../Transaction/List", (object)ViewBag.Transactions)
+        <div>
+            Navigation:
+            @if (ViewBag.Page > 1)
+            {
+                @Html.ActionLink("<< Previous", "History", new { page = ViewBag.Page - 1 })@: |
+            }
+        
+            @for (int i = ViewBag.StartPage; i < ViewBag.EndPage; ++i)
+            {
+                if(i==ViewBag.Page){
+                    @ViewBag.Page;@:,
+                } else {
+                    @Html.ActionLink(i.ToString(), "History", new { page = i })@:,
+                }
+            }
+            @if (ViewBag.Pages > 0)
+            {
+                if (ViewBag.EndPage == ViewBag.Page)
+                {
+                    @ViewBag.EndPage
+                } else {
+                    @Html.ActionLink(((int)ViewBag.EndPage).ToString(), "History", new { page = (int)ViewBag.EndPage })
+                }
+            }
+
+            @if (ViewBag.Page < ViewBag.Pages)
+            {
+                @:| @Html.ActionLink("Next >>", "History", new { page = ViewBag.Page + 1 })
+            }
+        </div>
+    </div>
+</div>

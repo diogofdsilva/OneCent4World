@@ -1,0 +1,129 @@
+﻿@model _1CW_Site.Models.CompanyModel
+
+@{
+    ViewBag.Title = "Register a Company";
+    Layout = "~/Views/Shared/_LayoutStart.cshtml";
+}
+
+<link href="@Url.Content("~/Content/RegisterCompany.css")" rel="stylesheet" type="text/css" />
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm("Create", "Company", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <div class="fieldset">
+        <h2>Register Company</h2>
+        <fieldset>
+            <legend>Company Information</legend>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Password)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ConfirmPassword)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ConfirmPassword)
+                @Html.ValidationMessageFor(model => model.ConfirmPassword)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Address1)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Address1)
+                @Html.ValidationMessageFor(model => model.Address1)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Address2)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Address2)
+                @Html.ValidationMessageFor(model => model.Address2)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PostalCode)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.PostalCode)
+                @Html.ValidationMessageFor(model => model.PostalCode)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.City)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.City)
+                @Html.ValidationMessageFor(model => model.City)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Country)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(model => model.CountryId, new SelectList(ViewBag.Countries,"Key","Value"))
+                @Html.ValidationMessageFor(model => model.CountryId)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Url)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Url)
+                @Html.ValidationMessageFor(model => model.Url)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Tags)
+            </div>
+
+            <div class="editor-field">
+            @{
+                foreach (KeyValuePair<int,string> tag in ViewBag.Tags)
+                {
+                    <input type="checkbox" name="tags" value="@tag.Key.ToString()" />
+                    <label> @tag.Value </label>
+                    <p />
+                }
+            }
+            @Html.ValidationMessageFor(model => model.Tags)
+            </div>
+
+            <div class="editor-label">
+                Image
+            </div>
+            <div class="editor-field">
+                <input type="file" id="CompanyImage" name="CompanyImage" />
+            </div>
+
+            <p>
+                <input type="submit" value="Register" />
+            </p>
+        </fieldset>
+    </div>
+}

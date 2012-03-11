@@ -1,0 +1,79 @@
+﻿@model _1CW_Site.Models.TransactionModel
+
+@{
+    ViewBag.Title = "Transfer money to " + Model.CompanyName;
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $("#OrganizationId").change(function()
+        {
+            $("#organizationImage").attr({
+                "src": "/ONG/ShowOrganizationImage/" + $("#OrganizationId").val()
+            })
+        })
+    })
+</script>
+
+<link href="@Url.Content("~/Content/Transaction.css")" rel="stylesheet" type="text/css" />
+
+@using (Html.BeginForm())
+{
+        @Html.ValidationSummary(true)
+
+    <div class="box" id="box_transaction_company">
+        <div class="box_title">Company</div>
+        <div class="box_content">
+            Name: @Html.TextBoxFor(m => m.CompanyName, new { @readonly = true })
+            <p class="centered_image">
+                <img alt="Loading Company Image" src="@string.Format("/Company/ShowCompanyImage/{0}", Model.CompanyId)" />
+            </p>
+        </div>
+    </div>
+    
+    <div class="box" id="box_transaction_organization">
+        <div class="box_title">Organization</div>
+        <div class="box_content">
+            <table>
+                <tr>
+                    <td>Name: </td>
+                    <td>@Html.DropDownListFor(m => m.OrganizationId, (SelectList)ViewBag.Organizations)</td>
+                </tr>
+                <tr>
+                    <td><p id="donation">@Html.LabelFor(model => model.DonationAmount): </p></td>
+                    <td>@Html.TextBoxFor(model => model.DonationAmount, new { @readonly = true, style = "width:100px" })
+                    @Html.ValidationMessageFor(model => model.DonationAmount)
+                    </td>
+                </tr>
+            </table>
+            <p class="centered_image">
+                <img id="organizationImage" alt="Loading Organization Image" src="@string.Format("/ONG/ShowOrganizationImage/{0}", Model.OrganizationId)" />
+            </p>
+        </div>
+    </div>
+    <div class="box" id="box_transaction_amount">
+        <div class="box_title">Payment</div>
+        <div class="box_content">
+            <p id="accept_text">
+                By accepting this payment, you are accepting to pay the company
+                declared in this page the amount below plus the donation for charity.<br />
+                Please, make sure you want to do this. This cannot be undone.
+            </p>
+            <hr />
+            <p id="amount">
+                Amount : @Html.TextBoxFor(m => m.PaidAmount, new { @readonly = true })
+            </p>
+            <p class="centered_image">
+                <input type="submit" value="Pay Now" />
+                @Html.ActionLink("Cancel", "MyAccount", "Home")
+            </p>
+        </div>
+    </div>
+    @Html.HiddenFor(model => model.CompanyId)
+}
+

@@ -1,0 +1,1158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="cw_databaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="cw_databaseModelStoreContainer">
+          <EntitySet Name="Account" EntityType="cw_databaseModel.Store.Account" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Address" EntityType="cw_databaseModel.Store.Address" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Company" EntityType="cw_databaseModel.Store.Company" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CompanyTag" EntityType="cw_databaseModel.Store.CompanyTag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Country" EntityType="cw_databaseModel.Store.Country" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Deposit" EntityType="cw_databaseModel.Store.Deposit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Emergency" EntityType="cw_databaseModel.Store.Emergency" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Organization" EntityType="cw_databaseModel.Store.Organization" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrganizationTag" EntityType="cw_databaseModel.Store.OrganizationTag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Person" EntityType="cw_databaseModel.Store.Person" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Profile" EntityType="cw_databaseModel.Store.Profile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role" EntityType="cw_databaseModel.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tag" EntityType="cw_databaseModel.Store.Tag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Telephone" EntityType="cw_databaseModel.Store.Telephone" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Transaction" EntityType="cw_databaseModel.Store.Transaction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Withdraw" EntityType="cw_databaseModel.Store.Withdraw" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__Address__Country__3ACC9741" Association="cw_databaseModel.Store.FK__Address__Country__3ACC9741">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Company__Profile__689361F1" Association="cw_databaseModel.Store.FK__Company__Profile__689361F1">
+            <End Role="Profile" EntitySet="Profile" />
+            <End Role="Company" EntitySet="Company" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CompanyTa__Compa__7E82A310" Association="cw_databaseModel.Store.FK__CompanyTa__Compa__7E82A310">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="CompanyTag" EntitySet="CompanyTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CompanyTa__Tag_i__7F76C749" Association="cw_databaseModel.Store.FK__CompanyTa__Tag_i__7F76C749">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="CompanyTag" EntitySet="CompanyTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Deposit__Profile__50BBD860" Association="cw_databaseModel.Store.FK__Deposit__Profile__50BBD860">
+            <End Role="Profile" EntitySet="Profile" />
+            <End Role="Deposit" EntitySet="Deposit" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Emergency__Organ__79BDEDF3" Association="cw_databaseModel.Store.FK__Emergency__Organ__79BDEDF3">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="Emergency" EntitySet="Emergency" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Organizat__Organ__62DA889B" Association="cw_databaseModel.Store.FK__Organizat__Organ__62DA889B">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="OrganizationTag" EntitySet="OrganizationTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Organizat__Profi__5E15D37E" Association="cw_databaseModel.Store.FK__Organizat__Profi__5E15D37E">
+            <End Role="Profile" EntitySet="Profile" />
+            <End Role="Organization" EntitySet="Organization" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Organizat__Tag_i__63CEACD4" Association="cw_databaseModel.Store.FK__Organizat__Tag_i__63CEACD4">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="OrganizationTag" EntitySet="OrganizationTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Person__Profile___6D58170E" Association="cw_databaseModel.Store.FK__Person__Profile___6D58170E">
+            <End Role="Profile" EntitySet="Profile" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Person__Role_id__6E4C3B47" Association="cw_databaseModel.Store.FK__Person__Role_id__6E4C3B47">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Profile__Account__47326E26" Association="cw_databaseModel.Store.FK__Profile__Account__47326E26">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Profile" EntitySet="Profile" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Profile__Address__463E49ED" Association="cw_databaseModel.Store.FK__Profile__Address__463E49ED">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Profile" EntitySet="Profile" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Telephone__Profi__55808D7D" Association="cw_databaseModel.Store.FK__Telephone__Profi__55808D7D">
+            <End Role="Profile" EntitySet="Profile" />
+            <End Role="Telephone" EntitySet="Telephone" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__Compa__7405149D" Association="cw_databaseModel.Store.FK__Transacti__Compa__7405149D">
+            <End Role="Company" EntitySet="Company" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__Organ__74F938D6" Association="cw_databaseModel.Store.FK__Transacti__Organ__74F938D6">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__Perso__7310F064" Association="cw_databaseModel.Store.FK__Transacti__Perso__7310F064">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Withdraw__Profil__4BF72343" Association="cw_databaseModel.Store.FK__Withdraw__Profil__4BF72343">
+            <End Role="Profile" EntitySet="Profile" />
+            <End Role="Withdraw" EntitySet="Withdraw" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Address1" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Address2" Type="varchar" MaxLength="50" />
+          <Property Name="PostalCode" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="City" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Country_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="Profile_id" />
+          </Key>
+          <Property Name="Profile_id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Image" Type="varbinary(max)" />
+          <Property Name="Url" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CompanyTag">
+          <Key>
+            <PropertyRef Name="Company_id" />
+            <PropertyRef Name="Tag_id" />
+          </Key>
+          <Property Name="Company_id" Type="int" Nullable="false" />
+          <Property Name="Tag_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Alpha2" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="Alpha3" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="Numeric" Type="char" Nullable="false" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="Deposit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Amount" Type="money" Nullable="false" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Profile_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Emergency">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="Weight" Type="decimal" Nullable="false" Precision="3" Scale="2" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="Image" Type="varbinary(max)" />
+          <Property Name="Organization_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="Profile_id" />
+          </Key>
+          <Property Name="Profile_id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Image" Type="varbinary(max)" />
+          <Property Name="Url" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="OrganizationTag">
+          <Key>
+            <PropertyRef Name="Organization_id" />
+            <PropertyRef Name="Tag_id" />
+          </Key>
+          <Property Name="Organization_id" Type="int" Nullable="false" />
+          <Property Name="Tag_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Profile_id" />
+          </Key>
+          <Property Name="Profile_id" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Birthdate" Type="date" />
+          <Property Name="Role_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="RegisteredDate" Type="datetime" Nullable="false" />
+          <Property Name="Address_id" Type="int" Nullable="false" />
+          <Property Name="Account_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Telephone">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Telephone" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="Profile_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Person_id" Type="int" Nullable="false" />
+          <Property Name="Company_id" Type="int" Nullable="false" />
+          <Property Name="Organization_id" Type="int" />
+          <Property Name="Value" Type="money" Nullable="false" />
+          <Property Name="Donation" Type="money" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Reference" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Withdraw">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Amount" Type="money" Nullable="false" />
+          <Property Name="Destination" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Profile_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Address__Country__3ACC9741">
+          <End Role="Country" Type="cw_databaseModel.Store.Country" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Address" Type="cw_databaseModel.Store.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="Country_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Company__Profile__689361F1">
+          <End Role="Profile" Type="cw_databaseModel.Store.Profile" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Company" Type="cw_databaseModel.Store.Company" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="Profile_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CompanyTa__Compa__7E82A310">
+          <End Role="Company" Type="cw_databaseModel.Store.Company" Multiplicity="1" />
+          <End Role="CompanyTag" Type="cw_databaseModel.Store.CompanyTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="Profile_id" />
+            </Principal>
+            <Dependent Role="CompanyTag">
+              <PropertyRef Name="Company_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CompanyTa__Tag_i__7F76C749">
+          <End Role="Tag" Type="cw_databaseModel.Store.Tag" Multiplicity="1" />
+          <End Role="CompanyTag" Type="cw_databaseModel.Store.CompanyTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CompanyTag">
+              <PropertyRef Name="Tag_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Deposit__Profile__50BBD860">
+          <End Role="Profile" Type="cw_databaseModel.Store.Profile" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Deposit" Type="cw_databaseModel.Store.Deposit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Deposit">
+              <PropertyRef Name="Profile_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Emergency__Organ__79BDEDF3">
+          <End Role="Organization" Type="cw_databaseModel.Store.Organization" Multiplicity="1" />
+          <End Role="Emergency" Type="cw_databaseModel.Store.Emergency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Profile_id" />
+            </Principal>
+            <Dependent Role="Emergency">
+              <PropertyRef Name="Organization_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Organizat__Organ__62DA889B">
+          <End Role="Organization" Type="cw_databaseModel.Store.Organization" Multiplicity="1" />
+          <End Role="OrganizationTag" Type="cw_databaseModel.Store.OrganizationTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Profile_id" />
+            </Principal>
+            <Dependent Role="OrganizationTag">
+              <PropertyRef Name="Organization_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Organizat__Profi__5E15D37E">
+          <End Role="Profile" Type="cw_databaseModel.Store.Profile" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Organization" Type="cw_databaseModel.Store.Organization" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Organization">
+              <PropertyRef Name="Profile_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Organizat__Tag_i__63CEACD4">
+          <End Role="Tag" Type="cw_databaseModel.Store.Tag" Multiplicity="1" />
+          <End Role="OrganizationTag" Type="cw_databaseModel.Store.OrganizationTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrganizationTag">
+              <PropertyRef Name="Tag_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Person__Profile___6D58170E">
+          <End Role="Profile" Type="cw_databaseModel.Store.Profile" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Person" Type="cw_databaseModel.Store.Person" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="Profile_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Person__Role_id__6E4C3B47">
+          <End Role="Role" Type="cw_databaseModel.Store.Role" Multiplicity="1" />
+          <End Role="Person" Type="cw_databaseModel.Store.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="Role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Profile__Account__47326E26">
+          <End Role="Account" Type="cw_databaseModel.Store.Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Profile" Type="cw_databaseModel.Store.Profile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Profile">
+              <PropertyRef Name="Account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Profile__Address__463E49ED">
+          <End Role="Address" Type="cw_databaseModel.Store.Address" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Profile" Type="cw_databaseModel.Store.Profile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Profile">
+              <PropertyRef Name="Address_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Telephone__Profi__55808D7D">
+          <End Role="Profile" Type="cw_databaseModel.Store.Profile" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Telephone" Type="cw_databaseModel.Store.Telephone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Telephone">
+              <PropertyRef Name="Profile_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__Compa__7405149D">
+          <End Role="Company" Type="cw_databaseModel.Store.Company" Multiplicity="1" />
+          <End Role="Transaction" Type="cw_databaseModel.Store.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="Profile_id" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="Company_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__Organ__74F938D6">
+          <End Role="Organization" Type="cw_databaseModel.Store.Organization" Multiplicity="0..1" />
+          <End Role="Transaction" Type="cw_databaseModel.Store.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Profile_id" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="Organization_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__Perso__7310F064">
+          <End Role="Person" Type="cw_databaseModel.Store.Person" Multiplicity="1" />
+          <End Role="Transaction" Type="cw_databaseModel.Store.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Profile_id" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="Person_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Withdraw__Profil__4BF72343">
+          <End Role="Profile" Type="cw_databaseModel.Store.Profile" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Withdraw" Type="cw_databaseModel.Store.Withdraw" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Withdraw">
+              <PropertyRef Name="Profile_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="cw_databaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="OCWEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Account" EntityType="cw_databaseModel.Account" />
+          <EntitySet Name="Address" EntityType="cw_databaseModel.Address" />
+          <EntitySet Name="Country" EntityType="cw_databaseModel.Country" />
+          <EntitySet Name="Emergency" EntityType="cw_databaseModel.Emergency" />
+          <EntitySet Name="Profile" EntityType="cw_databaseModel.Profile" />
+          <EntitySet Name="Role" EntityType="cw_databaseModel.Role" />
+          <EntitySet Name="Telephone" EntityType="cw_databaseModel.Telephone" />
+          <EntitySet Name="Transaction" EntityType="cw_databaseModel.Transaction" />
+          <AssociationSet Name="FK__Profile__Account__6B1AC8E1" Association="cw_databaseModel.FK__Profile__Account__6B1AC8E1">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Profile" EntitySet="Profile" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Address__Country__5AE46118" Association="cw_databaseModel.FK__Address__Country__5AE46118">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Profile__Address__6A26A4A8" Association="cw_databaseModel.FK__Profile__Address__6A26A4A8">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Profile" EntitySet="Profile" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__Compa__099F5001" Association="cw_databaseModel.FK__Transacti__Compa__099F5001">
+            <End Role="Company" EntitySet="Profile" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Emergency__Organ__0F582957" Association="cw_databaseModel.FK__Emergency__Organ__0F582957">
+            <End Role="Organization" EntitySet="Profile" />
+            <End Role="Emergency" EntitySet="Emergency" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__Organ__0A93743A" Association="cw_databaseModel.FK__Transacti__Organ__0A93743A">
+            <End Role="Organization" EntitySet="Profile" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Person__Role_id__03E676AB" Association="cw_databaseModel.FK__Person__Role_id__03E676AB">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Person" EntitySet="Profile" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transacti__Perso__08AB2BC8" Association="cw_databaseModel.FK__Transacti__Perso__08AB2BC8">
+            <End Role="Person" EntitySet="Profile" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Telephone__Profi__6FDF7DFE" Association="cw_databaseModel.FK__Telephone__Profi__6FDF7DFE">
+            <End Role="Profile" EntitySet="Profile" />
+            <End Role="Telephone" EntitySet="Telephone" />
+          </AssociationSet>
+          <EntitySet Name="Deposit" EntityType="cw_databaseModel.Deposit" />
+          <EntitySet Name="Tag" EntityType="cw_databaseModel.Tag" />
+          <EntitySet Name="Withdraw" EntityType="cw_databaseModel.Withdraw" />
+          <AssociationSet Name="FK__Deposit__Profile__0564AAC9" Association="cw_databaseModel.FK__Deposit__Profile__0564AAC9">
+            <End Role="Profile" EntitySet="Profile" />
+            <End Role="Deposit" EntitySet="Deposit" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Withdraw__Profil__009FF5AC" Association="cw_databaseModel.FK__Withdraw__Profil__009FF5AC">
+            <End Role="Profile" EntitySet="Profile" />
+            <End Role="Withdraw" EntitySet="Withdraw" />
+          </AssociationSet>
+          <AssociationSet Name="OrganizationTag" Association="cw_databaseModel.OrganizationTag">
+            <End Role="Organization" EntitySet="Profile" />
+            <End Role="Tag" EntitySet="Tag" />
+          </AssociationSet>
+          <AssociationSet Name="CompanyTag" Association="cw_databaseModel.CompanyTag">
+            <End Role="Company" EntitySet="Profile" />
+            <End Role="Tag" EntitySet="Tag" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="Value" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="Profile" Relationship="cw_databaseModel.FK__Profile__Account__6B1AC8E1" FromRole="Account" ToRole="Profile" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Address1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address2" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PostalCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Country_id" Nullable="false" />
+          <NavigationProperty Name="Country" Relationship="cw_databaseModel.FK__Address__Country__5AE46118" FromRole="Address" ToRole="Country" />
+          <NavigationProperty Name="Profile" Relationship="cw_databaseModel.FK__Profile__Address__6A26A4A8" FromRole="Address" ToRole="Profile" />
+        </EntityType>
+        <EntityType Name="Company" BaseType="cw_databaseModel.Profile">
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="Image" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="Url" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Transaction" Relationship="cw_databaseModel.FK__Transacti__Compa__099F5001" FromRole="Company" ToRole="Transaction" />
+          <NavigationProperty Name="Tag" Relationship="cw_databaseModel.CompanyTag" FromRole="Company" ToRole="Tag" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Alpha2" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Alpha3" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Numeric" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Address" Relationship="cw_databaseModel.FK__Address__Country__5AE46118" FromRole="Country" ToRole="Address" />
+        </EntityType>
+        <EntityType Name="Emergency">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" />
+          <Property Type="Decimal" Name="Weight" Nullable="false" Precision="3" Scale="2" />
+          <Property Type="DateTime" Name="EndDate" />
+          <Property Type="Binary" Name="Image" MaxLength="Max" FixedLength="false" />
+          <Property Type="Int32" Name="Organization_id" Nullable="false" />
+          <NavigationProperty Name="Organization" Relationship="cw_databaseModel.FK__Emergency__Organ__0F582957" FromRole="Emergency" ToRole="Organization" />
+        </EntityType>
+        <EntityType Name="Organization" BaseType="cw_databaseModel.Profile">
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="Image" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="Url" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Emergency" Relationship="cw_databaseModel.FK__Emergency__Organ__0F582957" FromRole="Organization" ToRole="Emergency" />
+          <NavigationProperty Name="Transaction" Relationship="cw_databaseModel.FK__Transacti__Organ__0A93743A" FromRole="Organization" ToRole="Transaction" />
+          <NavigationProperty Name="Tag" Relationship="cw_databaseModel.OrganizationTag" FromRole="Organization" ToRole="Tag" />
+        </EntityType>
+        <EntityType Name="Person" BaseType="cw_databaseModel.Profile">
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Birthdate" />
+          <Property Type="Int32" Name="Role_id" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="cw_databaseModel.FK__Person__Role_id__03E676AB" FromRole="Person" ToRole="Role" />
+          <NavigationProperty Name="Transaction" Relationship="cw_databaseModel.FK__Transacti__Perso__08AB2BC8" FromRole="Person" ToRole="Transaction" />
+        </EntityType>
+        <EntityType Name="Profile" Abstract="true">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="RegisteredDate" Nullable="false" />
+          <Property Type="Int32" Name="Address_id" Nullable="false" />
+          <Property Type="Int32" Name="Account_id" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="cw_databaseModel.FK__Profile__Account__6B1AC8E1" FromRole="Profile" ToRole="Account" />
+          <NavigationProperty Name="Address" Relationship="cw_databaseModel.FK__Profile__Address__6A26A4A8" FromRole="Profile" ToRole="Address" />
+          <NavigationProperty Name="Telephone" Relationship="cw_databaseModel.FK__Telephone__Profi__6FDF7DFE" FromRole="Profile" ToRole="Telephone" />
+          <NavigationProperty Name="Deposit" Relationship="cw_databaseModel.FK__Deposit__Profile__0564AAC9" FromRole="Profile" ToRole="Deposit" />
+          <NavigationProperty Name="Withdraw" Relationship="cw_databaseModel.FK__Withdraw__Profil__009FF5AC" FromRole="Profile" ToRole="Withdraw" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Person" Relationship="cw_databaseModel.FK__Person__Role_id__03E676AB" FromRole="Role" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Telephone">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Telephone1" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Profile_id" Nullable="false" />
+          <NavigationProperty Name="Profile" Relationship="cw_databaseModel.FK__Telephone__Profi__6FDF7DFE" FromRole="Telephone" ToRole="Profile" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Person_id" Nullable="false" />
+          <Property Type="Int32" Name="Company_id" Nullable="false" />
+          <Property Type="Int32" Name="Organization_id" />
+          <Property Type="Decimal" Name="Value" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Donation" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="DateTime" Name="Date" Nullable="false" />
+          <NavigationProperty Name="Company" Relationship="cw_databaseModel.FK__Transacti__Compa__099F5001" FromRole="Transaction" ToRole="Company" />
+          <NavigationProperty Name="Organization" Relationship="cw_databaseModel.FK__Transacti__Organ__0A93743A" FromRole="Transaction" ToRole="Organization" />
+          <NavigationProperty Name="Person" Relationship="cw_databaseModel.FK__Transacti__Perso__08AB2BC8" FromRole="Transaction" ToRole="Person" />
+          <Property Type="String" Name="Reference" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK__Profile__Account__6B1AC8E1">
+          <End Type="cw_databaseModel.Account" Role="Account" Multiplicity="1" />
+          <End Type="cw_databaseModel.Profile" Role="Profile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Profile">
+              <PropertyRef Name="Account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Address__Country__5AE46118">
+          <End Type="cw_databaseModel.Country" Role="Country" Multiplicity="1" />
+          <End Type="cw_databaseModel.Address" Role="Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="Country_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Profile__Address__6A26A4A8">
+          <End Type="cw_databaseModel.Address" Role="Address" Multiplicity="1" />
+          <End Type="cw_databaseModel.Profile" Role="Profile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Profile">
+              <PropertyRef Name="Address_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__Compa__099F5001">
+          <End Type="cw_databaseModel.Company" Role="Company" Multiplicity="1" />
+          <End Type="cw_databaseModel.Transaction" Role="Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Company">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="Company_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Emergency__Organ__0F582957">
+          <End Type="cw_databaseModel.Organization" Role="Organization" Multiplicity="1" />
+          <End Type="cw_databaseModel.Emergency" Role="Emergency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Emergency">
+              <PropertyRef Name="Organization_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__Organ__0A93743A">
+          <End Type="cw_databaseModel.Organization" Role="Organization" Multiplicity="0..1" />
+          <End Type="cw_databaseModel.Transaction" Role="Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="Organization_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Person__Role_id__03E676AB">
+          <End Type="cw_databaseModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="cw_databaseModel.Person" Role="Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="Role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transacti__Perso__08AB2BC8">
+          <End Type="cw_databaseModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="cw_databaseModel.Transaction" Role="Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="Person_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Telephone__Profi__6FDF7DFE">
+          <End Type="cw_databaseModel.Profile" Role="Profile" Multiplicity="1" />
+          <End Type="cw_databaseModel.Telephone" Role="Telephone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Telephone">
+              <PropertyRef Name="Profile_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Deposit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Date" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Source" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Profile_id" Nullable="false" />
+          <NavigationProperty Name="Profile" Relationship="cw_databaseModel.FK__Deposit__Profile__0564AAC9" FromRole="Deposit" ToRole="Profile" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Organization" Relationship="cw_databaseModel.OrganizationTag" FromRole="Tag" ToRole="Organization" />
+          <NavigationProperty Name="Company" Relationship="cw_databaseModel.CompanyTag" FromRole="Tag" ToRole="Company" />
+        </EntityType>
+        <EntityType Name="Withdraw">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Date" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="String" Name="Destination" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Profile_id" Nullable="false" />
+          <NavigationProperty Name="Profile" Relationship="cw_databaseModel.FK__Withdraw__Profil__009FF5AC" FromRole="Withdraw" ToRole="Profile" />
+        </EntityType>
+        <Association Name="FK__Deposit__Profile__0564AAC9">
+          <End Type="cw_databaseModel.Profile" Role="Profile" Multiplicity="1" />
+          <End Type="cw_databaseModel.Deposit" Role="Deposit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Deposit">
+              <PropertyRef Name="Profile_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Withdraw__Profil__009FF5AC">
+          <End Type="cw_databaseModel.Profile" Role="Profile" Multiplicity="1" />
+          <End Type="cw_databaseModel.Withdraw" Role="Withdraw" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Withdraw">
+              <PropertyRef Name="Profile_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OrganizationTag">
+          <End Type="cw_databaseModel.Organization" Role="Organization" Multiplicity="*" />
+          <End Type="cw_databaseModel.Tag" Role="Tag" Multiplicity="*" />
+        </Association>
+        <Association Name="CompanyTag">
+          <End Type="cw_databaseModel.Company" Role="Company" Multiplicity="*" />
+          <End Type="cw_databaseModel.Tag" Role="Tag" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="cw_databaseModelStoreContainer" CdmEntityContainer="OCWEntities">
+          <EntitySetMapping Name="Account">
+            <EntityTypeMapping TypeName="cw_databaseModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Address">
+            <EntityTypeMapping TypeName="cw_databaseModel.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="Country_id" ColumnName="Country_id" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Country">
+            <EntityTypeMapping TypeName="cw_databaseModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="Numeric" ColumnName="Numeric" />
+                <ScalarProperty Name="Alpha3" ColumnName="Alpha3" />
+                <ScalarProperty Name="Alpha2" ColumnName="Alpha2" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emergency">
+            <EntityTypeMapping TypeName="cw_databaseModel.Emergency">
+              <MappingFragment StoreEntitySet="Emergency">
+                <ScalarProperty Name="Organization_id" ColumnName="Organization_id" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profile">
+            <EntityTypeMapping TypeName="IsTypeOf(cw_databaseModel.Profile)">
+              <MappingFragment StoreEntitySet="Profile">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Account_id" ColumnName="Account_id" />
+                <ScalarProperty Name="Address_id" ColumnName="Address_id" />
+                <ScalarProperty Name="RegisteredDate" ColumnName="RegisteredDate" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(cw_databaseModel.Company)">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="Id" ColumnName="Profile_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(cw_databaseModel.Organization)">
+              <MappingFragment StoreEntitySet="Organization">
+                <ScalarProperty Name="Id" ColumnName="Profile_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(cw_databaseModel.Person)">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="Id" ColumnName="Profile_id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+                <ScalarProperty Name="Role_id" ColumnName="Role_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="cw_databaseModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Telephone">
+            <EntityTypeMapping TypeName="cw_databaseModel.Telephone">
+              <MappingFragment StoreEntitySet="Telephone">
+                <ScalarProperty Name="Profile_id" ColumnName="Profile_id" />
+                <ScalarProperty Name="Telephone1" ColumnName="Telephone" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transaction">
+            <EntityTypeMapping TypeName="cw_databaseModel.Transaction">
+              <MappingFragment StoreEntitySet="Transaction">
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Donation" ColumnName="Donation" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Organization_id" ColumnName="Organization_id" />
+                <ScalarProperty Name="Company_id" ColumnName="Company_id" />
+                <ScalarProperty Name="Person_id" ColumnName="Person_id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deposit">
+            <EntityTypeMapping TypeName="cw_databaseModel.Deposit">
+              <MappingFragment StoreEntitySet="Deposit">
+                <ScalarProperty Name="Profile_id" ColumnName="Profile_id" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tag">
+            <EntityTypeMapping TypeName="cw_databaseModel.Tag">
+              <MappingFragment StoreEntitySet="Tag">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Withdraw">
+            <EntityTypeMapping TypeName="cw_databaseModel.Withdraw">
+              <MappingFragment StoreEntitySet="Withdraw">
+                <ScalarProperty Name="Profile_id" ColumnName="Profile_id" />
+                <ScalarProperty Name="Destination" ColumnName="Destination" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="OrganizationTag" TypeName="cw_databaseModel.OrganizationTag" StoreEntitySet="OrganizationTag">
+            <EndProperty Name="Tag">
+              <ScalarProperty Name="Id" ColumnName="Tag_id" />
+            </EndProperty>
+            <EndProperty Name="Organization">
+              <ScalarProperty Name="Id" ColumnName="Organization_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="CompanyTag" TypeName="cw_databaseModel.CompanyTag" StoreEntitySet="CompanyTag">
+            <EndProperty Name="Tag">
+              <ScalarProperty Name="Id" ColumnName="Tag_id" />
+            </EndProperty>
+            <EndProperty Name="Company">
+              <ScalarProperty Name="Id" ColumnName="Company_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="OCWModel">
+        <EntityTypeShape EntityType="cw_databaseModel.Account" Width="1.5" PointX="3" PointY="3.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="cw_databaseModel.Address" Width="1.5" PointX="3" PointY="6.25" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="cw_databaseModel.Company" Width="1.5" PointX="7.5" PointY="5.25" Height="1.7879850260416665" />
+        <EntityTypeShape EntityType="cw_databaseModel.Country" Width="1.5" PointX="0.75" PointY="6.5" Height="2.1725878906250022" />
+        <EntityTypeShape EntityType="cw_databaseModel.Emergency" Width="1.5" PointX="9.75" PointY="13.25" Height="2.7494921875000031" />
+        <EntityTypeShape EntityType="cw_databaseModel.Organization" Width="1.5" PointX="7.5" PointY="8.25" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="cw_databaseModel.Person" Width="1.5" PointX="10.5" PointY="9.25" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="cw_databaseModel.Profile" Width="1.5" PointX="5.25" PointY="5.875" Height="3.3263964843750067" />
+        <EntityTypeShape EntityType="cw_databaseModel.Role" Width="1.5" PointX="8.25" PointY="1.75" Height="1.595683593749996" />
+        <EntityTypeShape EntityType="cw_databaseModel.Telephone" Width="1.5" PointX="7.5" PointY="15" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="cw_databaseModel.Transaction" Width="1.5" PointX="9.75" PointY="4.875" Height="2.9417936197916674" />
+        <AssociationConnector Association="cw_databaseModel.FK__Profile__Account__6B1AC8E1" >
+          <ConnectorPoint PointX="4.5" PointY="4.5478417968750016" />
+          <ConnectorPoint PointX="6" PointY="4.5478417968750016" />
+          <ConnectorPoint PointX="6" PointY="5.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="cw_databaseModel.FK__Address__Country__5AE46118" >
+          <ConnectorPoint PointX="2.25" PointY="7.5862939453125016" />
+          <ConnectorPoint PointX="3" PointY="7.5862939453125016" />
+        </AssociationConnector>
+        <AssociationConnector Association="cw_databaseModel.FK__Profile__Address__6A26A4A8" >
+          <ConnectorPoint PointX="4.5" PointY="7.5285953776041694" />
+          <ConnectorPoint PointX="5.25" PointY="7.5285953776041694" />
+        </AssociationConnector>
+        <AssociationConnector Association="cw_databaseModel.FK__Transacti__Compa__099F5001" >
+          <ConnectorPoint PointX="9" PointY="6.2401432291666659" />
+          <ConnectorPoint PointX="9.2291666666666661" PointY="6.240143229166665" />
+          <ConnectorPoint PointX="9.3958333333333339" PointY="6.2401432291666659" />
+          <ConnectorPoint PointX="9.75" PointY="6.2401432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="cw_databaseModel.FK__Emergency__Organ__0F582957" >
+          <ConnectorPoint PointX="9" PointY="8.8731205795190462" />
+          <ConnectorPoint PointX="9.2291666666666661" PointY="8.8731205795190462" />
+          <ConnectorPoint PointX="9.3958333333333339" PointY="8.8731205795190462" />
+          <ConnectorPoint PointX="9.4791666666666661" PointY="8.8731205795190462" />
+          <ConnectorPoint PointX="9.6458333333333339" PointY="8.8731205795190462" />
+          <ConnectorPoint PointX="10.20654296875" PointY="8.8731205795190462" />
+          <ConnectorPoint PointX="10.20654296875" PointY="13.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="cw_databaseModel.FK__Transacti__Organ__0A93743A" >
+          <ConnectorPoint PointX="9" PointY="8.5303077897595223" />
+          <ConnectorPoint PointX="9.2291666666666661" PointY="8.5303077897595223" />
+          <ConnectorPoint PointX="9.3958333333333339" PointY="8.5303077897595223" />
+          <ConnectorPoint PointX="9.4791666666666661" PointY="8.5303077897595223" />
+          <ConnectorPoint PointX="9.6458333333333339" PointY="8.5303077897595223" />
+          <ConnectorPoint PointX="9.978271484375" PointY="8.5303077897595223" />
+          <ConnectorPoint PointX="9.978271484375" PointY="8.0090950520833335" />
+        </AssociationConnector>
+        <AssociationConnector Association="cw_databaseModel.FK__Person__Role_id__03E676AB" >
+          <ConnectorPoint PointX="9.3125" PointY="3.345683593749996" />
+          <ConnectorPoint PointX="9.3125" PointY="10.953837890625" />
+          <ConnectorPoint PointX="9.4791666666666661" PointY="10.953837890625" />
+          <ConnectorPoint PointX="9.6458333333333339" PointY="10.953837890625" />
+          <ConnectorPoint PointX="10.123209635416666" PointY="10.953837890625" />
+          <ConnectorPoint PointX="10.289876302083334" PointY="10.953837890625" />
+          <ConnectorPoint PointX="10.5" PointY="10.953837890625" />
+        </AssociationConnector>
+        <AssociationConnector Association="cw_databaseModel.FK__Transacti__Perso__08AB2BC8" >
+          <ConnectorPoint PointX="10.8125" PointY="9.25" />
+          <ConnectorPoint PointX="10.8125" PointY="7.8167936197916674" />
+        </AssociationConnector>
+        <AssociationConnector Association="cw_databaseModel.FK__Telephone__Profi__6FDF7DFE" >
+          <ConnectorPoint PointX="6.4062525" PointY="9.0090950520833335" />
+          <ConnectorPoint PointX="6.4062525" PointY="15.893992513020834" />
+          <ConnectorPoint PointX="6.5260454166666664" PointY="15.893992513020834" />
+          <ConnectorPoint PointX="6.6927120833333325" PointY="15.893992513020834" />
+          <ConnectorPoint PointX="7.5" PointY="15.893992513020834" />
+        </AssociationConnector>
+        <InheritanceConnector EntityType="cw_databaseModel.Company">
+          <ConnectorPoint PointX="6.75" PointY="6.391202886814507" />
+          <ConnectorPoint PointX="7.5" PointY="6.5862532408367223" />
+        </InheritanceConnector>
+        <InheritanceConnector EntityType="cw_databaseModel.Organization" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="8.56224609375" />
+          <ConnectorPoint PointX="7.166666666666667" PointY="8.56224609375" />
+          <ConnectorPoint PointX="7.333333333333333" PointY="8.56224609375" />
+          <ConnectorPoint PointX="7.5" PointY="8.56224609375" />
+        </InheritanceConnector>
+        <InheritanceConnector EntityType="cw_databaseModel.Person">
+          <ConnectorPoint PointX="6" PointY="9.0090950520833335" />
+          <ConnectorPoint PointX="6" PointY="9.3840950520833335" />
+          <ConnectorPoint PointX="6.2526085416666666" PointY="9.3840950520833335" />
+          <ConnectorPoint PointX="6.4192752083333326" PointY="9.3840950520833335" />
+          <ConnectorPoint PointX="6.4908901041666667" PointY="9.3840950520833335" />
+          <ConnectorPoint PointX="6.6575567708333327" PointY="9.3840950520833335" />
+          <ConnectorPoint PointX="7.25" PointY="9.3840950520833335" />
+          <ConnectorPoint PointX="7.25" PointY="8.0667936197916674" />
+          <ConnectorPoint PointX="9.2291666666666661" PointY="8.0667936197916674" />
+          <ConnectorPoint PointX="9.3958333333333339" PointY="8.0667936197916674" />
+          <ConnectorPoint PointX="9.4791666666666661" PointY="8.0667936197916674" />
+          <ConnectorPoint PointX="9.6458333333333339" PointY="8.0667936197916674" />
+          <ConnectorPoint PointX="11.25" PointY="8.0667936197916674" />
+          <ConnectorPoint PointX="11.25" PointY="9.25" />
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="cw_databaseModel.Deposit" Width="1.5" PointX="7.5" PointY="11.75" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="cw_databaseModel.Tag" Width="1.5" PointX="9.75" PointY="17.5" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="cw_databaseModel.Withdraw" Width="1.5" PointX="7.5" PointY="17.625" Height="2.1725878906250031" />
+        <AssociationConnector Association="cw_databaseModel.FK__Deposit__Profile__0564AAC9" >
+          <ConnectorPoint PointX="5.5937475" PointY="9.0090950520833335" />
+          <ConnectorPoint PointX="5.5937475" PointY="12.836293945312502" />
+          <ConnectorPoint PointX="6.3229191666666669" PointY="12.836293945312502" />
+          <ConnectorPoint PointX="6.4895858333333329" PointY="12.836293945312502" />
+          <ConnectorPoint PointX="6.5260454166666664" PointY="12.836293945312502" />
+          <ConnectorPoint PointX="6.6927120833333325" PointY="12.836293945312502" />
+          <ConnectorPoint PointX="7.5" PointY="12.836293945312502" />
+        </AssociationConnector>
+        <AssociationConnector Association="cw_databaseModel.FK__Withdraw__Profil__009FF5AC" >
+          <ConnectorPoint PointX="6.6093787499999994" PointY="9.0090950520833335" />
+          <ConnectorPoint PointX="6.6093787499999994" PointY="18.7112939453125" />
+          <ConnectorPoint PointX="7.5" PointY="18.7112939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="cw_databaseModel.OrganizationTag" >
+          <ConnectorPoint PointX="9" PointY="10.422587890625" />
+          <ConnectorPoint PointX="9.2535744349011217" PointY="10.67616232552612" />
+          <ConnectorPoint PointX="9.3714255650988783" PointY="10.794013455723878" />
+          <ConnectorPoint PointX="9.375" PointY="10.797587890625" />
+          <ConnectorPoint PointX="9.375" PointY="18.393992513020834" />
+          <ConnectorPoint PointX="9.75" PointY="18.393992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="cw_databaseModel.CompanyTag" >
+          <ConnectorPoint PointX="9" PointY="7.1668239198717929" />
+          <ConnectorPoint PointX="9.2535744349011217" PointY="7.4203983547729138" />
+          <ConnectorPoint PointX="9.3714255650988783" PointY="7.538249484970672" />
+          <ConnectorPoint PointX="9.5625" PointY="7.7293239198717929" />
+          <ConnectorPoint PointX="9.5625" PointY="17.915744256510415" />
+          <ConnectorPoint PointX="9.75" PointY="17.915744256510415" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
